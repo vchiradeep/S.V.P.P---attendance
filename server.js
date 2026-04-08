@@ -7,6 +7,7 @@ const fs         = require("fs");
 const cron       = require("node-cron");
 
 const app = express();
+app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -164,6 +165,7 @@ cron.schedule("31 18 * * *",()=>autoMarkNotMarked());
 // ===================== ATTENDANCE ROUTES =====================
 
 app.post("/submit-attendance", async (req, res) => {
+  console.log("🔥 API HIT");
   // ✅ Log entry point so Render logs show the route was reached
   console.log("📥 /submit-attendance called, body keys:", Object.keys(req.body || {}));
 
