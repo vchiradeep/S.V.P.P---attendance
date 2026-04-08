@@ -34,11 +34,11 @@ mongoose.connect(process.env.MONGO_URI)
 
 // ===================== MODELS =====================
 // ✅ Use mongoose.models to avoid OverwriteModelError on hot reload
-const Attendance    = require("../models/Attendance");
-const Teacher       = require("../models/teacher");
-const UnlockRequest = require("../models/unlockrequest");
-const AuditLog      = require("../models/AuditLog");
-const LeaveRequest  = require("../models/Leaverequest");
+const Attendance    = require("./models/Attendance");
+const Teacher       = require("./models/teacher");
+const UnlockRequest = require("./models/unlockrequest");
+const AuditLog      = require("./models/AuditLog");
+const LeaveRequest  = require("./models/Leaverequest");
 
 // Log all models loaded successfully
 console.log("✅ Models loaded:", Object.keys(mongoose.models).join(", ") || "none yet (lazy load)");
